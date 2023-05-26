@@ -1,6 +1,8 @@
 #include<iostream>
 #include<GL/glut.h>
+#include <math.h>
 
+int frameNumber = 0;
 void myInit(void)
 {
 	glClearColor(1.0,1.0,1.0,1.0);
@@ -521,7 +523,27 @@ void hardwiredHouse(void)
 		glVertex2i(500,350);*/
 	glEnd();
 	
-	glFlush();	
+	//glFlush();	
+	int i;
+	glColor3f(0.8f, 0.8f, 0.9f);
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.05f, 0);
+	glVertex2f(0.05f, 0);
+	glVertex2f(0.05f, 3);
+	glVertex2f(-0.05f, 3);
+	glEnd();
+	glTranslatef(0, 3, 0);
+	glRotated(frameNumber * (180.0/46), 0, 0, 1);
+	glColor3f(0.4f, 0.4f, 0.8f);
+	for (i = 0; i < 3; i++) {
+		glRotated(120, 0, 0, 1);  // Note: These rotations accumulate.
+		glBegin(GL_POLYGON);
+		glVertex2f(0,0);
+		glVertex2f(0.5f, 0.1f);
+		glVertex2f(1.5f,0);
+		glVertex2f(0.5f, -0.1f);
+		glEnd();
+	}
 }
 
 int main(int argc, char **argv)
