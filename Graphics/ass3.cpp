@@ -1,5 +1,8 @@
-//Circle Drawing Algorithm
-
+/*
+Implement Bresenham circle drawing algorithm to draw any object. i) Simple circle ii) Concentric
+circle iii) Olympic ring iv) Spiral .The object should be displayed in all the quadrants with respect to
+center and radius
+*/
 #include<iostream>
 #include<GL/glut.h>
 using namespace std;

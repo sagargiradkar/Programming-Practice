@@ -1,13 +1,14 @@
+/*
+Install and explore the OpenGL. Draw a object in OPENGL
+*/
 #include<iostream>
 #include<GL/glut.h>
-#include <math.h>
 
-int frameNumber = 0;
 void myInit(void)
 {
 	glClearColor(1.0,1.0,1.0,1.0);
 	glColor3f(0.0,0.0,0.0);
-	glPointSize(10.0);
+	glPointSize(5.0);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0.0,1080.0,0.0,720.0);
@@ -17,16 +18,13 @@ void hardwiredHouse(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_LINE_LOOP);
-		glColor3f(0.0,0.0,0.0);
 		glVertex2i(400,300);
 		glVertex2i(400,500);
 		glVertex2i(600,500);
 		glVertex2i(600,300);
 	glEnd();
 	
-	
-	glBegin(GL_POLYGON);
-		glColor3f(0.0,1.0,1.0);
+	glBegin(GL_LINE_LOOP);
 		glVertex2i(670,240);
 		glVertex2i(670,480);
 		glVertex2i(770,480);
@@ -34,23 +32,14 @@ void hardwiredHouse(void)
 	glEnd();
 	
 	glBegin(GL_POLYGON);
-		glColor3f(0.0,1.0,0.0);
-		glVertex2i(410,310);
-		glVertex2i(410,490);
-		glVertex2i(590,490);
-		glVertex2i(590,310);
-	glEnd();
-	
-	glBegin(GL_LINE_LOOP);
-		glColor3f(0.0,0.0,0.0);
+		glColor3f(1.0,0.0,1.0);
 		glVertex2i(670,240);
 		glVertex2i(670,480);
 		glVertex2i(770,480);
 		glVertex2i(770,240);
 	glEnd();
-
+	
 	glBegin(GL_LINE_LOOP);
-		glColor3f(0.0,0.0,0.0);
 		glVertex2i(674,244);
 		glVertex2i(674,476);
 		glVertex2i(766,476);
@@ -58,7 +47,6 @@ void hardwiredHouse(void)
 	glEnd();
 	
 	glBegin(GL_LINE_STRIP);
-		glColor3f(0.0,0.0,0.0);
 		glVertex2i(480, 270);	
 		glVertex2i(480, 300);
 		glVertex2i(520, 300);
@@ -66,13 +54,54 @@ void hardwiredHouse(void)
 	glEnd();
 	
 	glBegin(GL_LINE_LOOP);
-		glColor3f(0.0,0.0,0.0);
 		glVertex2i(460,240);
 		glVertex2i(460,270);
 		glVertex2i(540,270);
 		glVertex2i(540,240);
 	glEnd();
 	
+	glBegin(GL_LINE_LOOP);
+		glVertex2i(370,120);
+		glVertex2i(370,200);
+		glVertex2i(630,200);
+		glVertex2i(630,120);
+	glEnd();
+	
+	glBegin(GL_LINE_LOOP);
+		glVertex2i(375,125);
+		glVertex2i(375,195);
+		glVertex2i(625,195);
+		glVertex2i(625,125);
+	glEnd();
+	
+	glBegin(GL_LINE_LOOP);
+		glVertex2i(690,400);
+		glVertex2i(690,415);
+		glVertex2i(750,415);
+		glVertex2i(750,400);
+	glEnd();
+	
+	glBegin(GL_LINE_LOOP);
+		glVertex2i(710,300);
+		glVertex2i(710,320);
+		glVertex2i(730,320);
+		glVertex2i(730,300);
+	glEnd();
+	
+	glBegin(GL_LINE_LOOP);
+		glVertex2i(410,310);
+		glVertex2i(410,490);
+		glVertex2i(590,490);
+		glVertex2i(590,310);
+	glEnd();
+	
+	glBegin(GL_POLYGON);
+		glColor3f(0.0,.0,1.0);
+		glVertex2i(410,310);
+		glVertex2i(410,490);
+		glVertex2i(590,490);
+		glVertex2i(590,310);
+	glEnd();
 	// Keyboard Outline
 	glBegin(GL_LINE_LOOP);
 		glColor3f(0.0,0.0,0.0);
@@ -81,7 +110,7 @@ void hardwiredHouse(void)
 		glVertex2i(630,200);
 		glVertex2i(630,120);
 	glEnd();
-	/*
+	
 	// Keyboard Inline
 	glBegin(GL_LINE_LOOP);
 		glColor3f(0.0,0.0,0.0);
@@ -90,7 +119,7 @@ void hardwiredHouse(void)
 		glVertex2i(625,195);
 		glVertex2i(625,125);
 	glEnd();
-	*/
+	
 	//Keyboard Keys 1
 	glBegin(GL_LINE_LOOP);
 		glColor3f(0.0,0.0,0.0);
@@ -101,7 +130,7 @@ void hardwiredHouse(void)
 	glEnd();
 	
 	// 2
-	/*
+	
 	glBegin(GL_LINE_LOOP);
 		glColor3f(0.0,0.0,0.0);
 		glVertex2i(395,130);
@@ -163,7 +192,7 @@ void hardwiredHouse(void)
 		glVertex2i(560,140);
 		glVertex2i(560,130);
 	glEnd();
-	*/
+	
 	// 9
 	glBegin(GL_LINE_LOOP);
 		glColor3f(0.0,0.0,0.0);
@@ -289,7 +318,7 @@ void hardwiredHouse(void)
 		glVertex2i(515,160);
 		glVertex2i(515,150);
 	glEnd();
-	/*
+	
 	// Upper 23
 	glBegin(GL_LINE_LOOP);
 		glColor3f(0.0,0.0,0.0);
@@ -469,7 +498,7 @@ void hardwiredHouse(void)
 		glVertex2i(540,180);
 		glVertex2i(540,170);
 	glEnd();
-	*/
+	
 	// Upper2 40
 	glBegin(GL_LINE_LOOP);
 		glColor3f(0.0,0.0,0.0);
@@ -511,39 +540,9 @@ void hardwiredHouse(void)
 		glVertex2i(590,490);
 		glVertex2i(590,310);
 	glEnd();
-	/*
-	// Letter A
-	glBegin(GL_LINE_STRIP);
-		glColor3f(0.0,0.0,0.0);
-		glVertex2i(460,350);
-		glVertex2i(480,430);
-		glVertex2i(490,390);
-		glVertex2i(470,390);
-		glVertex2i(490,390);
-		glVertex2i(500,350);*/
-	glEnd();
 	
-	//glFlush();	
-	int i;
-	glColor3f(0.8f, 0.8f, 0.9f);
-	glBegin(GL_POLYGON);
-	glVertex2f(-0.05f, 0);
-	glVertex2f(0.05f, 0);
-	glVertex2f(0.05f, 3);
-	glVertex2f(-0.05f, 3);
-	glEnd();
-	glTranslatef(0, 3, 0);
-	glRotated(frameNumber * (180.0/46), 0, 0, 1);
-	glColor3f(0.4f, 0.4f, 0.8f);
-	for (i = 0; i < 3; i++) {
-		glRotated(120, 0, 0, 1);  // Note: These rotations accumulate.
-		glBegin(GL_POLYGON);
-		glVertex2f(0,0);
-		glVertex2f(0.5f, 0.1f);
-		glVertex2f(1.5f,0);
-		glVertex2f(0.5f, -0.1f);
-		glEnd();
-	}
+	
+	glFlush();	
 }
 
 int main(int argc, char **argv)
