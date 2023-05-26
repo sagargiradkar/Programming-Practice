@@ -1,4 +1,4 @@
-import java.util.*; 
+import java.util.Scanner; 
 class Complex {
 	int real, imaginary;
 	int mul,r;

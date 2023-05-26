@@ -278,19 +278,12 @@ void Menu(int n){
 		}
 	else if(n==5)
 		{
-			DDABoat(25.0f,100.0f,75.0f,50.0f);
-			glColor3f(1.0,0.0,1.0);
-			DDABoat(75.0f,50.0f,125.0f,50.0f);
-			glColor3f(1.0,0.0,1.0);
-			DDABoat(125.0f,50.0f,150.0f,100.0f);
-			glColor3f(1.0,0.0,1.0);
-			DDABoat(150.0f,100.0f,25.0f,100.0f);
-			glColor3f(1.0,0.0,1.0);
-			DDABoat(125.0f,100.0f,125.0f,150.0f);
-			glColor3f(1.0,0.0,1.0);
-			DDABoat(125.0f,150.0f,100.0f,100.0f);
-			glColor3f(1.0,0.0,1.0);
-			DDABoat(100.0f,100.0f,25.0f,100.0f);
+			DDA_Line(50.0f,200.0f,100.0f,50.0f);
+			DDA_Line(100.0f,50.0f,450.0f,50.0f);
+			DDA_Line(450.0f,50.0f,500.0f,200.0f);
+			DDA_Line(500.0f,200.0f,50.0f,200.0f);
+			DDA_Line(200.0f,200.0f,300.0f,500.0f);
+			DDA_Line(300.0f,500.0f,300.0f,200.0f);
 
 		}
 	else 
