@@ -11,7 +11,7 @@ mouse click, keyboard interface and menu driven programming
 using namespace std;
 
 int x1, y11, x2, y2, dx, dy, x, y, s1, s2, temp, interchange, e, algo = 0;
-float length, boundaryColor[3]={0,0,0}, interiorColor[3]={1,1,1}, fillColor[3]={1,0,0}, readpixel[3];
+float length, boundaryColor[3]={0,0,0}, interiorColor[3]={1,1,1}, fillColor[3]={0,0,1}, readpixel[3];
 
 void myInit (void) {
 	glClearColor(1.0,1.0,1.0,0.0);
@@ -103,7 +103,7 @@ void BoundaryFill4(int x, int y)
 	if((x<0)|| (x >= w)) return;
 	if((y<0)|| (y >= h)) return;
 	
-	if((interiorColor[0]!= boundaryColor[0] || interiorColor[1]!= boundaryColor[1] || interiorColor[2]!= boundaryColor[2]) && (interiorColor[0] != fillColor[0] || interiorColor[1]!= fillColor[1] || interiorColor[2] != fillColor[2]))
+	if((interiorColor[0]!= boundaryColor[0] && interiorColor[1]!= boundaryColor[1] && interiorColor[2]!= boundaryColor[2]) || (interiorColor[0] != fillColor[0] && interiorColor[1]!= fillColor[1] && interiorColor[2] != fillColor[2]))
 	{
 		SetPixel(x, y);
 		

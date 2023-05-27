@@ -42,14 +42,14 @@ void mydisplay(void)
 	glColor3f(1.0f,0.0f,0.0f);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	
+	while(1){
 	cout<<"\nEnter the number of interation\n";
 	cin>>n;
 	drawkoch(0.0,0.05,n);
 	drawkoch(-120.0,0.05,n);
 	drawkoch(120.0,0.05,n);
 	glFlush();
-	
+	}
 	
 }
 int main(int argc,char **argv)
