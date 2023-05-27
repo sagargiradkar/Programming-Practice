@@ -12,6 +12,7 @@ using namespace std;
 int mati[100][100], k = 0, c;
 int mato[100][100]; 
 float tx,ty;
+float Xm,Ym;
 float sx,sy;
 void myInit(void)
 {
@@ -310,10 +311,10 @@ void Rotation_about_arbitory()
 				cout<<"Enter the Rotaion angle : ";
 				cin>>angle;
 				angle=(angle*(3.142/180));
-				cout<<"Enter the value of tx :";
-				cin>>tx;
-			 	cout<<"Enter the value of ty :";
-		        cin>>ty;
+				cout<<"Enter the value of Xm :";
+				cin>>Xm;
+			 	cout<<"Enter the value of Ym :";
+		        cin>>Ym;
 	float arrT[3][3];
 		arrT[0][0]=cos(angle);
 		arrT[0][1]=sin(angle);
@@ -321,8 +322,8 @@ void Rotation_about_arbitory()
 		arrT[1][0]=-sin(angle);
 		arrT[1][1]=cos(angle);
 		arrT[1][2]=0;
-		arrT[2][0]=(-tx*cos(angle)+ty*sin(angle)+tx);
-		arrT[2][1]=(-tx*sin(angle)-ty*cos(angle)+ty);
+		arrT[2][0]=(-Xm*cos(angle)+Ym*sin(angle)+Xm);
+		arrT[2][1]=(-Xm*sin(angle)-Ym*cos(angle)+Ym);
 		arrT[2][2]=1;
 		
 		multMatrix(arrT);
@@ -338,10 +339,10 @@ void Rotation_about_arbitory()
 	}
 void Scalling_about_Fixed()
 	{			
-				cout<<"Enter the value of tx :";
-				cin>>tx;
-			 	cout<<"Enter the value of ty :";
-		        cin>>ty;
+				cout<<"Enter the value of Xm :";
+				cin>>Xm;
+			 	cout<<"Enter the value of Ym :";
+		        cin>>Ym;
 		        	cout<<"Enter the value of Sx  :";
 					cin>>sx;
 					cout<<"Enter the value of Sy :";
@@ -353,8 +354,8 @@ void Scalling_about_Fixed()
 		arrT[1][0]=0;
 		arrT[1][1]=sy;
 		arrT[1][2]=0;
-		arrT[2][0]=(-sx*tx+tx);
-		arrT[2][1]=(sy*ty+ty);
+		arrT[2][0]=((Xm)*(1-sx));
+		arrT[2][1]=((Ym)*(1-sy));
 		arrT[2][2]=1;
 		
 		multMatrix(arrT);
@@ -527,10 +528,10 @@ int main(int argc, char **argv)
 			glutAddMenuEntry("2] About Y-axis ",2);
 			
 			int rota_arbi_id=glutCreateMenu(rotaion_arbitory_menu);
-			glutAddMenuEntry("1] Rotation about arbitory point ",1);
+			glutAddMenuEntry("Rotation about arbitory point ",1);
 			
 			int scalling_arbi_id=glutCreateMenu(scalling_arbitory_menu);
-			glutAddMenuEntry("1] Scalling about arbitory point ",1);
+			glutAddMenuEntry("Scalling about arbitory point ",1);
 			
 			glutCreateMenu(menu);
 		    glutAddSubMenu("1] Translation",translation_id);
