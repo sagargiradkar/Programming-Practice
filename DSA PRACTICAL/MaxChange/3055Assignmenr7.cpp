@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 #include<iomanip>
 using namespace std;
-
+//stucture
 struct table{
     int dist,pver;
 };
