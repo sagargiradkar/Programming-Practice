@@ -102,8 +102,6 @@ void Olympic_Ring(int r, int h, int k)
 void Spiral_Curve_1(){
 	glBegin(GL_POINTS);
 	int radius=10;
-	cout<<"Enter Number of turns you want :";
-	cin>>turns;
 	glVertex2i(x+h,y+h);
 	for(int i=0; i<turns; i++) {
 		h=h+10;
@@ -213,6 +211,8 @@ int main(int argc, char **argv)
 			cout<<"\n\n >>> Enter the No of Circle's you want : \n >> No = ";
 			cin>>no;  
 				
+			cout<<"\n\n >>> Enter Number of turns you want : \n >> No = ";
+			cin>>turns;
 			glutInit(&argc,argv);
 			glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 			glutInitWindowSize(800,800);

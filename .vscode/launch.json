@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/sagar/Programming-Practice-1/PracticeAssignment",
-      "program": "/home/sagar/Programming-Practice-1/PracticeAssignment/build/Debug/outDebug",
+      "cwd": "/home/sagar/Programming-Practice-1/Graphics",
+      "program": "/home/sagar/Programming-Practice-1/Graphics/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
