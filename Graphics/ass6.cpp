@@ -57,17 +57,7 @@ void multMatrix(float  arrT[3][3])
 void Translation(float tx ,float ty)
 	{
 		
-		float arrT[3][3];
-		arrT[0][0]=1;
-		arrT[0][1]=0;
-		arrT[0][2]=tx;
-		arrT[1][0]=0;
-		arrT[1][1]=1;
-		arrT[1][2]=ty;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+		float arrT[3][3]={1,0,tx,0,1,ty,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -83,17 +73,7 @@ void scaling(float sx , float sy)
 	{
 		float Sx=sx;
 		float Sy=sy;
-		float arrT[3][3];
-		arrT[0][0]=Sx;
-		arrT[0][1]=0;
-		arrT[0][2]=0;
-		arrT[1][0]=0;
-		arrT[1][1]=Sy;
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+		float arrT[3][3]={Sx,0,0,0,Sy,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -105,22 +85,9 @@ void scaling(float sx , float sy)
 		glEnd();
 		glFlush();	
 	}
-
 void Rotation(float angle)
-	{
-	
-		float arrT[3][3];
-		
-		arrT[0][0]=cos(angle);
-		arrT[0][1]=-(sin(angle));
-		arrT[0][2]=0;
-		arrT[1][0]=sin(angle);
-		arrT[1][1]=cos(angle);
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+	{	
+		float arrT[3][3]={cos(angle),-(sin(angle)),0,sin(angle),cos(angle),0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -134,17 +101,7 @@ void Rotation(float angle)
 	}
 void Reflection_X_axis()
 	{
-	float arrT[3][3];
-		arrT[0][0]=1;
-		arrT[0][1]=0;
-		arrT[0][2]=0;
-		arrT[1][0]=0;
-		arrT[1][1]=-1;
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={1,0,0,0,-1,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -158,17 +115,7 @@ void Reflection_X_axis()
 	}
 void Reflection_Y_axis()
 	{
-	float arrT[3][3];
-		arrT[0][0]=-1;
-		arrT[0][1]=0;
-		arrT[0][2]=0;
-		arrT[1][0]=0;
-		arrT[1][1]=1;
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={-1,0,0,0,1,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -182,17 +129,7 @@ void Reflection_Y_axis()
 	}
 void Reflection_X_equal_Y_axis()
 	{
-	float arrT[3][3];
-		arrT[0][0]=0;
-		arrT[0][1]=1;
-		arrT[0][2]=0;
-		arrT[1][0]=1;
-		arrT[1][1]=0;
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={0,1,0,1,0,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -206,17 +143,7 @@ void Reflection_X_equal_Y_axis()
 	}
 void Reflection_About_Origin()
 	{
-	float arrT[3][3];
-		arrT[0][0]=-1;
-		arrT[0][1]=0;
-		arrT[0][2]=0;
-		arrT[1][0]=0;
-		arrT[1][1]=-1;
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={-1,0,0,0,-1,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -230,17 +157,7 @@ void Reflection_About_Origin()
 	}
 void Reflection_X_equal_minus_Y_axis()
 	{
-	float arrT[3][3];
-		arrT[0][0]=-1;
-		arrT[0][1]=0;
-		arrT[0][2]=0;
-		arrT[1][0]=0;
-		arrT[1][1]=-1;
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={-1,0,0,0-1,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -257,17 +174,7 @@ void shearing_X_axis()
 	float shx;
 	cout<<"Enter the value of shx  :";
    cin>>shx;
-	float arrT[3][3];
-		arrT[0][0]=1;
-		arrT[0][1]=shx;
-		arrT[0][2]=0;
-		arrT[1][0]=0;
-		arrT[1][1]=1;
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={1,shx,0,0,1,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -284,17 +191,7 @@ void shearing_Y_axis()
 	float shy;
 	cout<<"Enter the value of shy  :";
    cin>>shy;
-	float arrT[3][3];
-		arrT[0][0]=1;
-		arrT[0][1]=0;
-		arrT[0][2]=0;
-		arrT[1][0]=shy;
-		arrT[1][1]=1;
-		arrT[1][2]=0;
-		arrT[2][0]=0;
-		arrT[2][1]=0;
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={1,0,0,shy,1,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -315,17 +212,7 @@ void Rotation_about_arbitory()
 				cin>>Xm;
 			 	cout<<"Enter the value of Ym :";
 		        cin>>Ym;
-	float arrT[3][3];
-		arrT[0][0]=cos(angle);
-		arrT[0][1]=sin(angle);
-		arrT[0][2]=0;
-		arrT[1][0]=-sin(angle);
-		arrT[1][1]=cos(angle);
-		arrT[1][2]=0;
-		arrT[2][0]=(-Xm*cos(angle)+Ym*sin(angle)+Xm);
-		arrT[2][1]=(-Xm*sin(angle)-Ym*cos(angle)+Ym);
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={cos(angle),sin(angle),0,-sin(angle),cos(angle),0,(-Xm*cos(angle)+Ym*sin(angle)+Xm),(-Xm*sin(angle)-Ym*cos(angle)+Ym),1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -347,17 +234,7 @@ void Scalling_about_Fixed()
 					cin>>sx;
 					cout<<"Enter the value of Sy :";
 					cin>>sy;
-	float arrT[3][3];
-		arrT[0][0]=sx;
-		arrT[0][1]=0;
-		arrT[0][2]=0;
-		arrT[1][0]=0;
-		arrT[1][1]=sy;
-		arrT[1][2]=0;
-		arrT[2][0]=((Xm)*(1-sx));
-		arrT[2][1]=((Ym)*(1-sy));
-		arrT[2][2]=1;
-		
+	float arrT[3][3]={sx,0,0,0,sy,0,((Xm)*(1-sx)),((Ym)*(1-sy)),1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);
@@ -449,9 +326,9 @@ void rotaion_menu(int i) {
 	angle=(angle*(3.142/180));
 	
 	switch(i) {
-		case 1:Rotation(angle);
+		case 1:Rotation(-(angle));
 		       break;
-		case 2:Rotation(-(angle));
+		case 2:Rotation(angle);
 			break;
 	}
 } 
