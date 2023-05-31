@@ -8,8 +8,8 @@ quadrants with center as (0, 0). The line should work for all the slopes positiv
 #include<GL/glut.h>
 
 using namespace std;
-#define h 500
-#define w 500
+#define h 1000
+#define w 1000
 
 int choice;
 float x1, x2, y11, y2;
@@ -254,7 +254,8 @@ void myDisplay(void)
 	{
 		SetPixel(i, 0);
 		SetPixel(0, i);
-	}		
+	}
+
 	glEnd();
 	glFlush();
 }
@@ -285,6 +286,13 @@ void Menu(int n){
 			DDA_Line(200.0f,200.0f,300.0f,500.0f);
 			DDA_Line(300.0f,500.0f,300.0f,200.0f);
 
+			// DDA_Line(50.0f,100.0f,200.0f,100.0f);
+			// DDA_Line(200.0f,100.0f,220.0f,150.0f);
+			// DDA_Line(220.0f,150.0f,150.0f,150.0f);
+			// DDA_Line(150.0f,150.0f,110.0f,75.0f);
+			// DDA_Line(110.0f,175.0f,100.0f,50.0f);
+			// DDA_Line(100.0f,150.0f,30.0f,150.0f);
+
 		}
 	else 
 		{
@@ -307,7 +315,7 @@ int main(int argc, char **argv)
 				
 			glutInit(&argc,argv);
 			glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-			glutInitWindowSize(1080,720);
+			glutInitWindowSize(1920,1080);
 			glutInitWindowPosition(50,100);
 			glutCreateWindow("DDA Line With Axis");
 			

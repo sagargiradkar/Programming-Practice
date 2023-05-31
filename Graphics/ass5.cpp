@@ -395,7 +395,7 @@ void mouseClick(int button, int state, int x, int y)
                         if(m>0)
                         {
 			            glBegin(GL_LINES);
-			                glVertex2f(e[m-1].xc,e[m-1].yc);              
+			               glVertex2f(e[m-1].xc,e[m-1].yc);              
 		                	glVertex2f(e[m].xc,e[m].yc);
 	                     glEnd();
                         }

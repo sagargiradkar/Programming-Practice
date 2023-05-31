@@ -20,11 +20,11 @@ void myInit(void)
 	}
 int sign(int x)
 	{
-		if(x>0) 
+		if(x>=0) 
 			{
 				return +1;
 			}
-		else if(x<0) 
+		else if(x<=0) 
 			{
 			return -1;
 			}
@@ -110,7 +110,7 @@ int main(int argc ,char ** argv)
 			cout<<" >> y = ";
 			cin>>y2;
 		glutInit(&argc,argv);
-		glutInitDisplayMode(GLUT_SINGLE  | GLUT_RGB);
+		glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 		glutInitWindowSize(500,500);
 		glutInitWindowPosition(100,100);
 		glutCreateWindow("DDA LINE DRAWING ALGORITHM");
