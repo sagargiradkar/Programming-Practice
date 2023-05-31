@@ -542,7 +542,7 @@ int main(int argc, char **argv)
 		  glutAddSubMenu("6] Rotation about arbitory point ", rota_arbi_id);
 		  glutAddSubMenu("7] Scalling about arbitory point ", scalling_arbi_id);
 		  
-		     glutAttachMenu(GLUT_MIDDLE_BUTTON);
+		    glutAttachMenu(GLUT_MIDDLE_BUTTON);
 			glutMainLoop();
 	return 0;	
 }

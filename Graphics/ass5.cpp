@@ -287,9 +287,9 @@ void init()
      glClearColor(1.0,1.0,1.0,0.0);
      glPointSize(2.0);
      glMatrixMode(GL_PROJECTION);
-	 glLoadIdentity();
-	 gluOrtho2D(-w/2,w/2,-h/2,h/2);
-	 glFlush();
+	glLoadIdentity();
+	gluOrtho2D(-w/2,w/2,-h/2,h/2);
+	glFlush();
 
 }
 void max_min()
@@ -446,7 +446,7 @@ int main(int argc, char **argv)
     glutInit (&argc, argv); //initialise the device(glut window) by 'init' routine to client window
     glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
     glutInitWindowSize(w,h);
-    glutCreateWindow ("Poly clipping : SANJAY"); 
+    glutCreateWindow ("Poly clipping : SAGAR"); 
     glutDisplayFunc (choice); //call backs are function pointers
     init();
     glutKeyboardFunc (keyboard);

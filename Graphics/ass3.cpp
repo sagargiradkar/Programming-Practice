@@ -233,7 +233,6 @@ void Menu(int n)
 void myDisplay(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-//	glBegin(GL_POINTS);
 	
 	for(int i=-wi; i<=wi; i++)
 	{
@@ -269,7 +268,7 @@ int main(int argc, char **argv)
 				glutAddMenuEntry(" 2. Concentric Circle ", 2);
 				glutAddMenuEntry(" 3. Olympic Ring ", 3);
 				glutAddMenuEntry(" 4. ClockWise Spiral Curve ", 4);
-			//	glutAddMenuEntry(" 5. AntiClockWise Spiral Curve ", 5);
+				
 				glutAddMenuEntry(" 5. Exit ", 5);
 			glutAttachMenu(GLUT_RIGHT_BUTTON);
 			glutMainLoop();
