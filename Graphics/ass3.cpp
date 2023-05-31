@@ -9,7 +9,7 @@ using namespace std;
 #define he 1300
 #define wi 1300
 
-int h, k, r, d, x, y, no;
+int h, k, r, d, x, y, no,turns;
 
 void myInit(void)
 {
@@ -98,74 +98,52 @@ void Olympic_Ring(int r, int h, int k)
 	}			
 }
 
-void Spiral_Curve_1(int r, int h)
-{
-	d = 3 - 2*r;
-	
-	x = 0;
-	y = r;
-	
-	Plot(x,y);
-	
-	while(x<=y)
-	{
-		if(d<=0)
-		{
-			d = d + 4*x + 6;
-			x++;
+//Spiral
+void Spiral_Curve_1(){
+	glBegin(GL_POINTS);
+	int radius=10;
+	cout<<"Enter Number of turns you want :";
+	cin>>turns;
+	glVertex2i(x+h,y+h);
+	for(int i=0; i<turns; i++) {
+		h=h+10;
+		d=3-2*radius;
+		x=0,y=radius;
+		while(x<=y) {
+			if(d<=0) {
+				d=d+4*x+6;
+				x=x+1;
+			} else {
+				d=d+4*(x-y)+10;
+				x=x+1;
+				y=y-1;
+			}
+			glVertex2i(y+h,x+k);
+			glVertex2i(x+h,y+k);
+			glVertex2i(-x+h,y+k);
+			glVertex2i(-y+h,x+k);
 		}
-		else
-		{
-			d = d + 4*(x-y) + 10;
-			x++;
-			y--;
+		radius=radius+10;
+		h=h-10;
+		d=3-2*radius;
+		x=0,y=radius;
+		while(x<=y) {
+			if(d<=0) {
+				d=d+4*x+6;
+				x=x+1;
+			} else {
+				d=d+4*(x-y)+10;
+				x=x+1;
+				y=y-1;
+			}
+			glVertex2i(x+h,-y+k);
+			glVertex2i(-y+h,-x+k);
+			glVertex2i(y+h,-x+k);
+			glVertex2i(-x+h,-y+k);
 		}
-		
-		Plot(x+h,y+k);
-	//	Plot(-x+h,-y+k);
-		Plot(y+h,x+k);
-	//	Plot(-y+h,-x+k);
-		Plot(-y+h,x+k);
-	//	Plot(y+h,-x+k);
-		Plot(-x+h,y+k);
-	//	Plot(x+h,-y+k);		
-	}			
+		radius=radius+10;
+	}
 }
-
-void Spiral_Curve_2(int r, int h)
-{
-	d = 3 - 2*r;
-	
-	x = 0;
-	y = r;
-	
-	Plot(x,y);
-	
-	while(x<=y)
-	{
-		if(d<=0)
-		{
-			d = d + 4*x + 6;
-			x++;
-		}
-		else
-		{
-			d = d + 4*(x-y) + 10;
-			x++;
-			y--;
-		}
-		
-	//	Plot(x+h,y+k);
-		Plot(-x+h,-y+k);
-	//	Plot(y+h,x+k);
-		Plot(-y+h,-x+k);
-	//	Plot(-y+h,x+k);
-		Plot(y+h,-x+k);
-	//	Plot(-x+h,y+k);
-		Plot(x+h,-y+k);		
-	}			
-}
-
 void Menu(int n)
 {	
 	switch(n)
@@ -201,29 +179,8 @@ void Menu(int n)
 			break;	
 			
 		case 4:	
-			for(int i = 0; i<2; i++)
-			{
-				Spiral_Curve_1(r, h);
-				r *= 2;
-				h -= r/2;
-				Spiral_Curve_2(r, h);
-				r *= 2;
-				h += r/2;
-			}		
+				Spiral_Curve_1();
 			break;	
-		/*	
-		case 5:
-			for(int i = 0; i<10; i++)
-			{
-				Spiral_Curve_2(r, h);
-				r *= 2;
-				h -= r/2;
-				Spiral_Curve_1(r, h);
-				r *= 2;
-				h += r/2;
-			}		
-			break;	
-		*/
 		case 5:
 			exit(0);
 	}	

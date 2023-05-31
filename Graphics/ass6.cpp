@@ -7,8 +7,7 @@ ii) Other transformations iii) Composite Transformations
 #include<math.h>
 using namespace std;
 #define h 700
-#define w 700
-                                                                                                                                                                   
+#define w 700                                                                                                                                                               
 int mati[100][100], k = 0, c;
 int mato[100][100]; 
 float tx,ty;
@@ -24,7 +23,6 @@ void myInit(void)
 	glLoadIdentity();
 	gluOrtho2D(-w/2,w/2,-h/2,h/2);
 }
-
 void Plot(float x, float y)
 {
 	glVertex2i(x, y);
@@ -53,7 +51,6 @@ void multMatrix(float  arrT[3][3])
 				mato[i][2]=(float)(arrT[2][0]*mati[i][0]+arrT[2][1]*mati[i][1]+arrT[2][2]*mati[i][2]);
 			}
 	}
-
 void Translation(float tx ,float ty)
 	{
 		
@@ -274,14 +271,11 @@ void MouseClick(int button, int state, int x, int y)
 			glFlush();
 		}
 	}		
-}	
-
-
+}
 void menu(int ch) {
 glBegin(GL_POINTS);
 myDisplay();
 }
-
 void translation_menu(int i){
 	
 	switch(i) {
@@ -422,7 +416,4 @@ int main(int argc, char **argv)
 		    glutAttachMenu(GLUT_MIDDLE_BUTTON);
 			glutMainLoop();
 	return 0;	
-}
-
-
-	
+}	
