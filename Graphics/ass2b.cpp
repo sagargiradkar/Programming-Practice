@@ -98,6 +98,7 @@ int Bresenham_Simple_Line(int x1, int y11, int x2, int y2)
 			x = x + s1;
 		}
 		e = e + 2*dy;
+		glEnd();
 	}
 	return x, y;
 }	
@@ -160,6 +161,7 @@ int Bresenham_Dotted_Line(int x1, int y11, int x2, int y2)
 			x = x + s1;
 		}
 		e = e + 2*dy;
+		glEnd();
 	}
 	return x, y;
 }
@@ -222,6 +224,7 @@ int Bresenham_Dashed_Line(int x1, int y11, int x2, int y2)
 			x = x + s1;
 		}
 		e = e + 2*dy;
+		glEnd();
 	}
 	return x, y;
 }
@@ -284,6 +287,7 @@ int Bresenham_Center_Dot_Line(int x1, int y11, int x2, int y2)
 			x = x + s1;
 		}
 		e = e + 2*dy;
+		glEnd();
 	}
 	return x, y;
 }
@@ -294,22 +298,18 @@ void Menu(int n)
 	{
 		case 1:
 			Bresenham_Simple_Line(x1, y11, x2, y2);	
-			glEnd();
 			break;
 				
 		case 2:
-			Bresenham_Dotted_Line(x1, y11, x2, y2);	
-			glEnd();
+			Bresenham_Dotted_Line(x1, y11, x2, y2);
 			break;
 			
 		case 3:
 			Bresenham_Dashed_Line(x1, y11, x2, y2);	
-			glEnd();
 			break;
 			
 		case 4:
 			Bresenham_Center_Dot_Line(x1, y11, x2, y2);
-			glEnd();
 			break;
 			
 		case 5:
@@ -317,20 +317,17 @@ void Menu(int n)
 			Bresenham_Simple_Line(40, 40, 40, 160);	
 			Bresenham_Simple_Line(40, 160, 180, 160);	
 			Bresenham_Simple_Line(180, 160, 180, 40);				
-			Bresenham_Simple_Line(180, 40, 40, 40);	
-			glEnd();		
+			Bresenham_Simple_Line(180, 40, 40, 40);		
 			glColor3f(0.0,0.0,1.0);
 			Bresenham_Simple_Line(40, 100, 110, 160);	
 			Bresenham_Simple_Line(110, 160, 180, 100);	
 			Bresenham_Simple_Line(180, 100, 110, 40);
 			Bresenham_Simple_Line(110, 40, 40, 100);
-			glEnd();	
-			glColor3f(1.0,0.0,0.0);
+			glColor3f(0.0,0.0,0.0);
 			Bresenham_Simple_Line(75, 130, 145, 130);	
 			Bresenham_Simple_Line(145, 130, 145, 70);	
 			Bresenham_Simple_Line(145, 70, 75, 70);
-			Bresenham_Simple_Line(75, 70, 75, 130);	
-			glEnd();					
+			Bresenham_Simple_Line(75, 70, 75, 130);						
 			break;		
 			
 		case 6:
