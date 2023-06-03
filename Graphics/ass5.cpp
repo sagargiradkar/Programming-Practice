@@ -446,7 +446,7 @@ int main(int argc, char **argv)
     glutInit (&argc, argv); //initialise the device(glut window) by 'init' routine to client window
     glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
     glutInitWindowSize(w,h);
-    glutCreateWindow ("Poly clipping : SAGAR"); 
+    glutCreateWindow ("Poly clipping"); 
     glutDisplayFunc (choice); //call backs are function pointers
     init();
     glutKeyboardFunc (keyboard);

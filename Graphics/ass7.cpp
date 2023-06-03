@@ -38,12 +38,11 @@ void mydisplay(void)
 {
 	int n;
 	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(0.0,1.0,1.0,1.0);
+	glClearColor(1.0,1.0,1.0,1.0);
 	glColor3f(1.0f,0.0f,0.0f);
 	glLineWidth(5);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	while(1){
 	cout<<"\nEnter the number of interation\n";
 	cin>>n;
 	drawkoch(0.0,0.05,n);
@@ -51,7 +50,6 @@ void mydisplay(void)
 	drawkoch(120.0,0.05,n);
 	glEnd();
 	glFlush();
-	}
 	
 }
 int main(int argc,char **argv)

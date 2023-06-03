@@ -94,7 +94,6 @@ void DDA_Line(float x1,float y11,float x2,float y22)
 		i++;
 	}
 }
-
 // Boundary Fill Algorithm
 // Function for BoundaryFill4
 void BoundaryFill4(int x, int y)
