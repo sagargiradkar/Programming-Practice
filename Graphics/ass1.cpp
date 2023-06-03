@@ -14,7 +14,7 @@ void myInit(void)
 	gluOrtho2D(0.0,1080.0,0.0,720.0);
 }
 
-void hardwiredHouse(void)
+void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glBegin(GL_LINE_LOOP);
@@ -552,7 +552,7 @@ int main(int argc, char **argv)
 	glutInitWindowSize(1080,720);
 	glutInitWindowPosition(100,150);
 	glutCreateWindow("My Computer");
-	glutDisplayFunc(hardwiredHouse);
+	glutDisplayFunc(display);
 	myInit();
 	glutMainLoop();
 }
