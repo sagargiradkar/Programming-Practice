@@ -8,8 +8,8 @@ quadrants with center as (0, 0). The line should work for all the slopes positiv
 #include<GL/glut.h>
 
 using namespace std;
-#define h 1000
-#define w 1000
+#define h 700
+#define w 700
 
 int choice;
 float x1, x2, y11, y2;
@@ -254,6 +254,7 @@ void myDisplay(void)
 	{
 		SetPixel(i, 0);
 		SetPixel(0, i);
+		
 	}
 
 	glEnd();
@@ -264,18 +265,22 @@ void Menu(int n){
 	if(n==1)
 		{
 			DDA_Line(x1,y11,x2,y2);
+			glEnd();
 		}
 	else if(n==2)
 		{
-			DDA_Dotted_Line(x1,y11,x2,y2);			
+			DDA_Dotted_Line(x1,y11,x2,y2);	
+			glEnd();		
 		}
 	else if(n==3)
 		{
 			DDA_Dashed_Line(x1,y11,x2,y2);	
+			glEnd();
 		}
 	else if(n==4)
 		{
 			DDA_Center_Dot_Line(x1,y11,x2,y2);
+			glEnd();
 		}
 	else if(n==5)
 		{
@@ -285,6 +290,7 @@ void Menu(int n){
 			DDA_Line(500.0f,200.0f,50.0f,200.0f);
 			DDA_Line(200.0f,200.0f,300.0f,500.0f);
 			DDA_Line(300.0f,500.0f,300.0f,200.0f);
+			glEnd();
 
 			// DDA_Line(50.0f,100.0f,200.0f,100.0f);
 			// DDA_Line(200.0f,100.0f,220.0f,150.0f);
@@ -315,7 +321,7 @@ int main(int argc, char **argv)
 				
 			glutInit(&argc,argv);
 			glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-			glutInitWindowSize(1920,1080);
+			glutInitWindowSize(700,700);
 			glutInitWindowPosition(50,100);
 			glutCreateWindow("DDA Line With Axis");
 			

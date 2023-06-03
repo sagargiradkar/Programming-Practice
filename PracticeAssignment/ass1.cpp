@@ -92,6 +92,8 @@ void Menu(int n){
 	if(n==1)
 		{
 			DDA_Line(x1,y11,x2,y2);
+			glEnd();
+
 		}
 	else 
 		{
