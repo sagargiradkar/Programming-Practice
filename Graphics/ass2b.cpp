@@ -44,10 +44,8 @@ void Plot(float x, float y)
 	glVertex2i(x, y);
 }
 
-int Bresenham_Simple_Line(int x1, int y11, int x2, int y2)
+void Bresenham_Simple_Line(int x1, int y11, int x2, int y2)
 {
-	int temp;
-
 	x = x1, y = y11;
 	dx = abs(x2-x1);
 	dy = abs(y2-y11);
@@ -56,9 +54,7 @@ int Bresenham_Simple_Line(int x1, int y11, int x2, int y2)
 	
 	if(dy>dx)
 	{
-		temp = dx;
-		dx = dy;
-		dy = temp;
+		swap(dx,dy);
 		interchange = 1;
 	}
 	
@@ -100,7 +96,7 @@ int Bresenham_Simple_Line(int x1, int y11, int x2, int y2)
 		e = e + 2*dy;
 		glEnd();
 	}
-	return x, y;
+	//return x, y;
 }	
 
 int Bresenham_Dotted_Line(int x1, int y11, int x2, int y2)
