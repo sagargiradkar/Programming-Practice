@@ -46,9 +46,7 @@ void display(void)
 		drawkoch(-120.0,0.05,n);
 		drawkoch(120.0,0.05,n);
 		glFlush();
-		
 	}
-	
 int main(int argc,char **argcv)
 	{
 		cout<<"\nEnter the number of interation :";
