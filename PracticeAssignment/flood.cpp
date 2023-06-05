@@ -41,16 +41,11 @@ void FloodFill4(int x, int y)
 	if( readpixel[0] == interiorColor[0] && readpixel[1] == interiorColor[1] && readpixel[2] == interiorColor[2])
 	{
 		SetPixel(x, y);
-
-		FloodFill4(x+1,y);
-
-		FloodFill4(x-1,y);
-
-		FloodFill4(x,y+1);
-
-		FloodFill4(x,y-1);
 		
-		glFlush();		
+		FloodFill4(x+1,y);
+		FloodFill4(x-1,y);
+		FloodFill4(x,y+1);
+		FloodFill4(x,y-1);
 	}
 }
 
