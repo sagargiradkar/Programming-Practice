@@ -32,7 +32,6 @@ void SetPixel(int p, int q)
 	glBegin(GL_POINTS);
 	glVertex2f(p,q);
 	glEnd();
-	glFlush();
 }
 
 void GetPixel(int p, int q, float *color)
