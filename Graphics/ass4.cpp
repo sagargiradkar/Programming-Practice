@@ -20,7 +20,7 @@ void myInit (void) {
 	glClearColor(1.0,1.0,1.0,1.0);
 	glColor3f(0.0f,1.0f,1.0f);
 	glPointSize(1.0);
-    glLineWidth(1.0);
+    glLineWidth(5.0);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0,640,0,480);
@@ -115,9 +115,8 @@ void Mouse(int btn, int state, int x, int y)
 void myDisplay(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	
-	glColor3f(1.0,0.0,0.0);
 	glBegin(GL_LINE_LOOP);
+	glColor3f(1.0,0.0,0.0);
 	glVertex2f(200,200);
 	glVertex2f(200,400);
 	glVertex2f(400,400);
