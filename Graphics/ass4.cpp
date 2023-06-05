@@ -10,12 +10,15 @@ mouse click, keyboard interface and menu driven programming
 
 using namespace std;
 
-int x1, y11, x2, y2, dx, dy, x, y, s1, s2, temp, interchange, e, algo = 0;
-float length, boundaryColor[3]={0,0,0}, interiorColor[3]={1,1,1}, fillColor[3]={0,0,1}, readpixel[3];
+int algo = 0;
+float boundaryColor[3]={0,0,0};
+float interiorColor[3]={1,1,1};
+float fillColor[3]={0,0,1};
+float readpixel[3];
 
 void myInit (void) {
 	glClearColor(1.0,1.0,1.0,0.0);
-	glColor3f(1.0f,0.0f,1.0f);
+	glColor3f(0.0f,1.0f,1.0f);
 	glPointSize(1.0);
     glLineWidth(1.0);
 	glMatrixMode(GL_PROJECTION);
@@ -36,64 +39,6 @@ void GetPixel(int p, int q, float *color)
 {
 	glReadPixels(p, q, 1, 1, GL_RGB, GL_FLOAT, color);
 }
-
-void Plot(float x, float y)
-{
-	glVertex2i(x, y);
-}
-
-int Sign(int x)
-{
- 	if(x>0)
- 	{
- 		return 1;
- 	}
- 	else if(x==0)
- 	{
- 		return 0;
- 	}
- 	else
- 	{
- 		return -1;
- 	}
-
-}	
-
-void DDA_Line(float x1,float y11,float x2,float y22)
-{	
-	
-	int i = 1;
-
-	if(abs(x2-x1) >= abs(y22-y11))
-	{
-		length = abs(x2-x1);
-	}	
-
-	else
-	{
-		length = abs(y22-y11);
-	}
-
-	dx = (x2-x1)/length; 
-	dy = (y22-y11)/length;
-	
-	x = x1 + 0.5*Sign(dx);
-	y = y11 + 0.5*Sign(dy);
-	
-	glBegin(GL_POINTS);
-	
-	Plot(x,y);
-
-	while ( i <= length )
-	{
-		x = x + dx;
-		y = y + dy;
-			
-		Plot(x,y);
-		
-		i++;
-	}
-}
 // Boundary Fill Algorithm
 // Function for BoundaryFill4
 void BoundaryFill4(int x, int y)
@@ -110,6 +55,7 @@ void BoundaryFill4(int x, int y)
 		BoundaryFill4(x-1, y);
 		BoundaryFill4(x, y+1);
 		BoundaryFill4(x, y-1);
+		glEnd();
 		glFlush();		
 	}
 }
@@ -118,8 +64,6 @@ void BoundaryFill4(int x, int y)
 // Function for FloodFill4
 void FloodFill4(int x, int y)
 {
-	float color[3];
-
 	GetPixel(x, y, readpixel);
 
 	if( readpixel[0] == interiorColor[0] && readpixel[1] == interiorColor[1] && readpixel[2] == interiorColor[2])
@@ -127,13 +71,10 @@ void FloodFill4(int x, int y)
 		SetPixel(x, y);
 
 		FloodFill4(x+1,y);
-
 		FloodFill4(x-1,y);
-
 		FloodFill4(x,y+1);
-
 		FloodFill4(x,y-1);
-		
+		glEnd();	
 		glFlush();		
 	}
 }
@@ -175,12 +116,13 @@ void Mouse(int btn, int state, int x, int y)
 void myDisplay(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glBegin(GL_POINTS);	
-		
-	DDA_Line(200, 200, 200, 300);
-	DDA_Line(200, 300, 400, 300);
-	DDA_Line(400, 300, 400, 200);
-	DDA_Line(400, 200, 200, 200);
+	
+	glColor3f(1.0,0.0,0.0);
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(100,100);
+	glVertex2f(100,200);
+	glVertex2f(200,200);
+	glVertex2f(200,100);
 		
 	glEnd();
 	glFlush();
