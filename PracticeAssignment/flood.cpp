@@ -10,7 +10,7 @@ mouse click, keyboard interface and menu driven programming
 
 using namespace std;
 
-int algo;
+int algo=0;
 
 float interiorColor[3]={1,1,1};
 float fillColor[3]={0,0,1};
@@ -42,7 +42,6 @@ void GetPixel(int p, int q, float *color)
 void FloodFill4(int x, int y)
 {
 	GetPixel(x, y, readpixel);
-
 	if( readpixel[0] == interiorColor[0] && readpixel[1] == interiorColor[1] && readpixel[2] == interiorColor[2])
 	{
 		SetPixel(x, y);
@@ -100,8 +99,8 @@ int main(int argc, char **argv)
 			glutInit( & argc, argv);
 			glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 			glutInitWindowSize(640, 480);
-			glutInitWindowPosition(100, 150);
-			glutCreateWindow(" Polygon Fill Algorithm ");
+			glutInitWindowPosition(0,0);
+			glutCreateWindow("Polygon Fill Algorithm ");
 			myInit();
 			glutDisplayFunc(myDisplay);
 			glutMouseFunc(Mouse);

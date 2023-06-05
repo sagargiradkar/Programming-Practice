@@ -17,7 +17,7 @@ float fillColor[3]={0,0,1};
 float readpixel[3];
 
 void myInit (void) {
-	glClearColor(1.0,1.0,1.0,0.0);
+	glClearColor(1.0,1.0,1.0,1.0);
 	glColor3f(0.0f,1.0f,1.0f);
 	glPointSize(1.0);
     glLineWidth(1.0);
@@ -118,10 +118,10 @@ void myDisplay(void)
 	
 	glColor3f(1.0,0.0,0.0);
 	glBegin(GL_LINE_LOOP);
-	glVertex2f(100,100);
-	glVertex2f(100,200);
 	glVertex2f(200,200);
-	glVertex2f(200,100);
+	glVertex2f(200,400);
+	glVertex2f(400,400);
+	glVertex2f(400,200);
 		
 	glEnd();
 	glFlush();
