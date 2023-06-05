@@ -33,13 +33,11 @@ void Translate()
 	cin>>tx>>ty;
 	float arrT[3][3]={1,0,tx,0,1,ty,0,0,1};
 	multMatrix(arrT);	
-	glColor3f(0.0,0.0,0.0);
 	glBegin(GL_LINE_LOOP);
 	for(int i=0;i<k;i++)
 		{
 		glVertex2f(mato[i][0],mato[i][1]);
 		}
-	glColor3f(1.0,0.0,0.0);
 	glEnd();
 	glFlush();
 	}
@@ -55,7 +53,6 @@ void MouseClick(int button, int state, int x, int y)
 			mati[k][0] = (float)(x-350);
 			mati[k][1] = (float)(350-y);
 			mati[k][2] = (float)(1);
-			glColor3f(1.0, 0.0, 0.0);
 			glBegin(GL_POINTS);
 			glVertex2f(mati[k][0], mati[k][1]);
 			glEnd();
