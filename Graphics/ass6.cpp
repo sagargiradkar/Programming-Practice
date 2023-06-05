@@ -8,7 +8,7 @@ ii) Other transformations iii) Composite Transformations
 using namespace std;
 #define h 700
 #define w 700                                                                                                                                                               
-int mati[100][100], k = 0, c;
+int mati[100][100], k = 0;
 int mato[100][100]; 
 float tx,ty;
 float Xm,Ym;
