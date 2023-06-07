@@ -2,8 +2,8 @@
 #include<math.h>
 #include<GL/glut.h>
 using namespace std;
-double theta;
-int radius;
+double theta=0;
+int radius=0;
 float angle=0;
 void myInit(void)
 	{
@@ -19,9 +19,9 @@ void myInit(void)
 void Sun(void)
 	{
 	glTranslated(1600,900,0);
-	glRotated(4*angle,0,0,1.0);
-	glColor3f(1.0,1.0,0.0);
+	glRotated(3*angle,0,0,1.0);
 	glBegin(GL_POLYGON);
+	glColor3f(1.0,1.0,0.0);
 	radius=70;
 	for(int i=0;i<360;i++)
 		{
@@ -34,18 +34,17 @@ void Sun(void)
 	{
 	glRotated(360/10,0,0,1.0);
 	glBegin(GL_LINES);
-	glVertex2f(80,0);
-	glVertex2f(140,00);
+	glVertex2f(0,0);
+	glVertex2f(150,0);
 	glEnd();
 	}
 	}
+	
 void scenary(void)
 	{
-	
 	glPushMatrix();
 	Sun();
-	glPopMatrix();
-	
+	glPopMatrix();	
 	}
 void display(void)
 	{
@@ -59,9 +58,9 @@ void Timer1(int)
 	glutPostRedisplay();
 	glutTimerFunc(1000/60,Timer1,0);
 	angle-=0.2;
-	if(angle>20)
+	if(angle>360)
 		{
-		angle=-30;
+		angle=360;
 		}
 	}
 int main(int argc,char **argv)
@@ -77,4 +76,3 @@ int main(int argc,char **argv)
 	glutMainLoop();
 	return 0;
 	}
-	
