@@ -16,7 +16,7 @@ void myInit(void)
 	glColor3f(0.0,0.0,0.0);
 	glPointSize(3.0);
 	glLineWidth(3.0);
-	glMatrixMode(GL_MODELVIEW);
+	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0.0,1920.0,0.0,1080.0);
 }
@@ -1089,28 +1089,6 @@ void Scenery(void)
 		
 		Flower();	// Call Flower Function
 		
-		//Cloud();	//	Call Cloud Function
-    
-    	//Birds();		//	Call bird Function
-			
-			
-	//glPushMatrix();
-//	glTranslatef(sun,0,0);
-//	glColor3f(1.0f,0.0f,1.0f);
-//	//background
-//	Birds();
-//	glPopMatrix();
-//	glutSwapBuffers();						
-			
-//	glPushMatrix();
-//	glTranslatef(0,sun,0);
-//	glColor3f(1.0f,0.0f,1.0f);
-	//background
-//	Cloud();
-//	glPopMatrix();
-//	glutSwapBuffers();		
-//	glFlush();	
-
 	// Sun
 	glPushMatrix();
 	glTranslatef(0,sun,0);
