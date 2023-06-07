@@ -5,11 +5,11 @@ Implement animation principles for any object
 #include<GL/glut.h>
 #include<math.h>
 
-int sun = 300;
+float angle;
 int cloud = -350;
 int boat = 200;
 int bird = -30;
-
+double theta;
 void myInit(void)
 {
 	glClearColor(1.0,1.0,1.0,1.0);
@@ -22,18 +22,28 @@ void myInit(void)
 }
 
 void Sun(void)
-{
-	// Sun
-	glColor3f(1.0, 1.0, 0.0);
-    glBegin(GL_POLYGON);
-	double theta;
-	int radius = 100;
-    for(int i = 0; i < 360; i++) {
-        theta = i * 3.142/180;
-        glVertex2f(1600 + radius*sin(theta), 950 + radius*cos(theta));
-    }
-    glEnd();
-}
+	{
+	glTranslated(1770,930,0);
+	glRotated(angle,0,0,1.0);
+	glColor3f(1.0,1.0,0.0);
+	glBegin(GL_POLYGON);
+	int radius=70;
+	for(int i=0;i<360;i++)
+		{
+		theta=i*(3.142/180);
+		glVertex2f(radius*sin(theta),radius*cos(theta));
+		}
+	glEnd();
+	
+	for(int i=0; i<10;i++)
+	{
+	glRotated(360/10,0,0,1.0);
+	glBegin(GL_LINES);
+	glVertex2f(80,0);
+	glVertex2f(140,00);
+	glEnd();
+	}
+	}
 
 void Boat(void)
 {
@@ -1091,21 +1101,10 @@ void Scenery(void)
 		
 	// Sun
 	glPushMatrix();
-	glTranslatef(0,sun,0);
-	glColor3f(1.0f,0.0f,1.0f);
 	//background
 	Sun();
 	glPopMatrix();
 //	glutSwapBuffers();		
-	
-	// sun cover background
-		glBegin(GL_POLYGON);
-		glColor3f(0.6,0.7,0.0);
-		glVertex2i(1300,580);
-		glVertex2i(1300,700);		
-		glVertex2i(1700,700);	
-		glVertex2i(1700,580);	
-		glEnd();
 	
 	// Boat
 	glPushMatrix();
@@ -1140,18 +1139,10 @@ void Timer1(int)
 {
 	glutPostRedisplay();
     glutTimerFunc(1000/60, Timer1, 0);
-    sun -= 1;		//Increase it speed up
-    if(sun == -270)
+    angle-= 1;		//Increase it speed up
+    if(angle> 360)
     {
-        // Background Sky
-    	glBegin(GL_POLYGON);
-		glColor3f(0.0,0.0,0.0);		//black
-		glVertex2i(0,700);
-		glVertex2i(0,1080);
-		glVertex2i(1920,1080);
-		glVertex2i(1920,700);
-		glEnd();
-    	sun = 300;		
+    	angle = 300;		
     }
 }
 
