@@ -118,9 +118,9 @@ void Spiral_Curve_1()
 				y = y - 1;
 			}
 			glBegin(GL_POINTS);
-			glVertex2i(y + h, x + k);
 			glVertex2i(x + h, y + k);
 			glVertex2i(-x + h, y + k);
+			glVertex2i(y + h, x + k);
 			glVertex2i(-y + h, x + k);
 			glEnd();
 		}
@@ -143,9 +143,11 @@ void Spiral_Curve_1()
 			}
 			glBegin(GL_POINTS);
 			glVertex2i(x + h, -y + k);
-			glVertex2i(-y + h, -x + k);
-			glVertex2i(y + h, -x + k);
 			glVertex2i(-x + h, -y + k);
+			glVertex2i(y + h, -x + k);
+			glVertex2i(-y + h, -x + k);
+			
+			
 			glEnd();
 		}
 		radius = radius + 10;
