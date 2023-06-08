@@ -15,7 +15,7 @@ void myInit(void)
 	}
 void drawkoch(float dir,float len,int iter)
 	{
-		double dirRad=0.0174533*dir;
+		double dirRad=(3.142/180)*dir;
 		float newx=oldx + len * cos(dirRad);
 		float newy=oldy + len * sin(dirRad);
 		glBegin(GL_LINE_LOOP);

@@ -154,7 +154,7 @@ void Reflection_About_Origin()
 	}
 void Reflection_X_equal_minus_Y_axis()
 	{
-	float arrT[3][3]={-1,0,0,0-1,0,0,0,1};
+	float arrT[3][3]={-1,0,0,0,-1,0,0,0,1};
 		multMatrix(arrT);
 		glColor3f(0.0f,0.0f,0.0f);
 		glBegin(GL_LINE_LOOP);

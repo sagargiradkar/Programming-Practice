@@ -10,7 +10,7 @@ float length, boundaryColor[3]={0,0,0}, interiorColor[3]={1,1,1}, fillColor[3]={
 
 void myInit (void) {
 	glClearColor(1.0,1.0,1.0,0.0);
-	glColor3f(1.0f,0.0f,1.0f);
+	glColor3f(0.0f,0.0f,0.0f);
 	glPointSize(1.0);
     glLineWidth(5.0);
 	glMatrixMode(GL_PROJECTION);
@@ -31,21 +31,18 @@ void GetPixel(int p, int q, float *color)
 {
 	glReadPixels(p, q, 1, 1, GL_RGB, GL_FLOAT, color);
 }
-
-void Plot(float x, float y)
-{
-	glVertex2i(x, y);
-}
 // Boundary Fill Algorithm
 
 void BoundaryFill4(int x, int y)
 {
 	GetPixel(x, y, interiorColor);
+
 	if((x<0)|| (x >= w)) return;
 	if((y<0)|| (y >= h)) return;
 	
 	if((interiorColor[0]!= boundaryColor[0] && interiorColor[1]!= boundaryColor[1] &&interiorColor[2]!= boundaryColor[2])|| (interiorColor[0] != fillColor[0] && interiorColor[1]!= fillColor[1] && interiorColor[2] != fillColor[2]))
 	{
+		
 		SetPixel(x, y);
 		
 		BoundaryFill4(x+1, y);
