@@ -79,7 +79,6 @@ void Mouse(int btn, int state, int x, int y)
 void myDisplay(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,0.0);
 	glBegin(GL_LINE_LOOP);
 	glVertex2i(200,200);
 	glVertex2i(200,400);

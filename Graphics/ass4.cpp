@@ -18,7 +18,7 @@ float readpixel[3];
 
 void myInit (void) {
 	glClearColor(1.0,1.0,1.0,1.0);
-	glColor3f(0.0f,1.0f,1.0f);
+	glColor3f(0.0f,0.0f,0.0f);
 	glPointSize(1.0);
     glLineWidth(5.0);
 	glMatrixMode(GL_PROJECTION);

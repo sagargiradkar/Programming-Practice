@@ -11,7 +11,7 @@ float interiorColor[3]={1,1,1}, fillColor[3]={0,0,1}, readpixel[3];
 
 void myInit (void) {
 	glClearColor(1.0,1.0,1.0,0.0);
-	glColor3f(1.0f,0.0f,1.0f);
+	glColor3f(0.0f,0.0f,0.0f);
 	glPointSize(1.0);
     glLineWidth(5.0);
 	glMatrixMode(GL_PROJECTION);
@@ -77,7 +77,6 @@ void Mouse(int btn, int state, int x, int y)
 void myDisplay(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,0.0);
 	glBegin(GL_LINE_LOOP);
 	glVertex2i(200,200);
 	glVertex2i(200,400);
